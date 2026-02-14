@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krua Thai Bolan 斯图加特泰式餐厅完整菜品与评价调研报告</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background:#f5f5f5;
+    color:#333;
+    line-height:1.8;
+    font-size:16px;
+  }
+  .container{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+
+  /* ===== 导航目录 ===== */
+  .toc{
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    padding:24px 28px;
+    margin-bottom:32px;
+    border-left:4px solid #d4a017;
+  }
+  .toc h2{
+    font-size:1.1rem;
+    color:#d4a017;
+    margin-bottom:12px;
+    letter-spacing:1px;
+  }
+  .toc ol{
+    padding-left:20px;
+    list-style:decimal;
+  }
+  .toc ol li{margin-bottom:6px}
+  .toc ol li a{
+    color:#b8860b;
+    text-decoration:none;
+    font-weight:500;
+    transition:color .2s;
+  }
+  .toc ol li a:hover{color:#e68a00;text-decoration:underline}
+
+  /* ===== 标题 ===== */
+  h1{
+    font-size:2rem;
+    color:#2c2c2c;
+    text-align:center;
+    margin:36px 0 16px;
+    font-weight:800;
+    letter-spacing:1px;
+    line-height:1.4;
+  }
+  h2{
+    font-size:1.5rem;
+    color:#d4a017;
+    margin:40px 0 16px;
+    padding-bottom:8px;
+    border-bottom:2px solid #f0d68c;
+  }
+  h3{
+    font-size:1.2rem;
+    color:#b8860b;
+    margin:28px 0 12px;
+  }
+  h4{
+    font-size:1.1rem;
+    color:#333;
+    margin:0 0 8px;
+  }
+
+  /* ===== 引言块 ===== */
+  .intro-block{
+    background:linear-gradient(135deg,#fffbe6 0%,#fff8e1 100%);
+    border-left:4px solid #d4a017;
+    padding:18px 24px;
+    border-radius:8px;
+    margin:20px 0 32px;
+    font-size:.95rem;
+    color:#555;
+  }
+  .intro-block strong{color:#333}
+  .intro-block a{color:#d4a017;text-decoration:underline}
+
+  /* ===== 段落 ===== */
+  p{margin:0 0 14px;text-align:justify}
+
+  /* ===== 链接 ===== */
+  a{color:#d4a017;text-decoration:none;transition:color .2s}
+  a:hover{color:#e68a00;text-decoration:underline}
+
+  /* ===== 卡片 ===== */
+  .dish-card{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 2px 16px rgba(0,0,0,.07);
+    padding:24px 28px;
+    margin:20px 0 28px;
+    transition:box-shadow .3s,transform .2s;
+  }
+  .dish-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.12);transform:translateY(-2px)}
+  .dish-card.recommended{
+    border:2px solid #d4a017;
+    box-shadow:0 2px 16px rgba(212,160,23,.18);
+  }
+  .dish-card.recommended h4::after{
+    content:" ⭐ 食客推荐";
+    color:#d4a017;
+    font-size:.85rem;
+    font-weight:600;
+  }
+  .dish-meta{
+    font-size:.92rem;
+    color:#666;
+    margin-bottom:10px;
+    line-height:1.7;
+  }
+  .dish-meta strong{color:#444}
+
+  /* ===== 图片 ===== */
+  .img-wrap{
+    text-align:center;
+    margin:16px 0;
+  }
+  .img-wrap img{
+    width:100%;
+    max-width:480px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+    display:inline-block;
+  }
+  .img-fallback{
+    display:none;
+    width:100%;
+    max-width:480px;
+    height:300px;
+    margin:0 auto;
+    border-radius:10px;
+    background:#f0f0f0;
+    color:#aaa;
+    font-size:1rem;
+    line-height:300px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+
+  /* ===== 表格 ===== */
+  .table-wrap{overflow-x:auto;margin:16px 0}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.93rem;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 6px rgba(0,0,0,.06);
+  }
+  thead{background:#d4a017;color:#fff}
+  th{padding:12px 14px;text-align:left;font-weight:600}
+  td{padding:10px 14px;border-bottom:1px solid #eee}
+  tbody tr:nth-child(even){background:#fdf8e8}
+  tbody tr:hover{background:#fff3cd}
+
+  /* ===== 水平线 ===== */
+  hr{border:none;border-top:1px solid #e8e0cc;margin:28px 0}
+
+  /* ===== 内容区块卡片 ===== */
+  .section-card{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 2px 12px rgba(0,0,0,.06);
+    padding:24px 28px;
+    margin:20px 0 28px;
+  }
+
+  /* ===== 列表 ===== */
+  ul,ol{padding-left:22px;margin-bottom:14px}
+  li{margin-bottom:6px}
+
+  /* ===== 响应式 ===== */
+  @media(max-width:640px){
+    body{font-size:15px}
+    h1{font-size:1.4rem}
+    h2{font-size:1.25rem}
+    .container{padding:12px 10px 40px}
+    .dish-card,.section-card,.toc{padding:16px 14px}
+    .img-wrap img{height:220px}
+    .img-fallback{height:220px;line-height:220px}
+    th,td{padding:8px 10px;font-size:.85rem}
+  }
+
+  /* ===== 章节锚点偏移 ===== */
+  [id]{scroll-margin-top:20px}
+
+  /* ===== 页脚 ===== */
+  .footer{
+    text-align:center;
+    color:#aaa;
+    font-size:.82rem;
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #e8e0cc;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ==================== 标题 ==================== -->
+<h1>Krua Thai Bolan<br>斯图加特泰式餐厅完整菜品与评价调研报告</h1>
+
+<div class="intro-block">
+  <strong>调研日期</strong>: 2026年2月14日<br>
+  <strong>餐厅</strong>: Krua Thai Bolan<br>
+  <strong>地址</strong>: 主店 Rotebühlstraße 159, 70197 Stuttgart / 二店 Rötestraße 23, 70197 Stuttgart<br>
+  <strong>电话</strong>: 主店 0711-34225235 / 二店 0711-99312299<br>
+  <strong>官网</strong>: <a href="https://kruathaibolan.de" target="_blank">kruathaibolan.de</a>
+</div>
+
+<!-- ==================== 导航目录 ==================== -->
+<nav class="toc">
+  <h2>📋 目录导航</h2>
+  <ol>
+    <li><a href="#ch1">第一章：餐厅概况与食客评价</a></li>
+    <li><a href="#ch2">第二章：前菜类菜品</a>
+      <ol>
+        <li><a href="#ch2-1">汤品 (Suppen)</a></li>
+        <li><a href="#ch2-2">小食 (Snacks)</a></li>
+        <li><a href="#ch2-3">沙拉 (Salat)</a></li>
+      </ol>
+    </li>
+    <li><a href="#ch3">第三章：主菜 — 鸡肉 (Chicken)</a></li>
+    <li><a href="#ch4">第四章：主菜 — 鸭肉 (Duck)</a></li>
+    <li><a href="#ch5">第五章：主菜 — 牛肉 (Beef)</a></li>
+    <li><a href="#ch6">第六章：主菜 — 鱼类 (Fish)</a></li>
+    <li><a href="#ch7">第七章：主菜 — 海鲜 (Seafood)</a></li>
+    <li><a href="#ch8">第八章：主菜 — 素食 (Vegetarian)</a></li>
+    <li><a href="#ch9">第九章：炒饭 (Fried Rice) 与面条 (Noodles)</a></li>
+    <li><a href="#ch10">第十章：辣度指南与点餐建议</a></li>
+    <li><a href="#ch11">第十一章：实用信息</a></li>
+    <li><a href="#sources">数据来源</a></li>
+  </ol>
+</nav>
+
+<!-- ==================== 第一章 ==================== -->
+<h2 id="ch1">第一章：餐厅概况与食客评价</h2>
+
+<div class="section-card">
+  <h3>餐厅定位</h3>
+  <p>Krua Thai Bolan 是一家扎根于斯图加特西区的家庭经营泰国餐厅。"Bolan"在泰语中意为"古老的、传统的"，暗示了这家餐厅对正宗泰式烹饪的追求。餐厅拥有两家分店，均位于斯图加特西区，共享同一菜单和品牌。主店位于 Rotebühlstraße，二店位于 Rötestraße，后者在 Wolt 外卖平台上线运营，且周日也提供营业服务（主店周日休息）。</p>
+</div>
+
+<div class="section-card">
+  <h3>各平台评分</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>平台</th><th>评分</th><th>评论数</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>Google Maps</td><td>3.5/5</td><td>109条</td><td>受2018年易主期差评拖累，近年评论几乎全是4-5星</td></tr>
+        <tr><td>TripAdvisor</td><td>4.1/5</td><td>40条</td><td>以旧名"Eidim Bolan"登记，斯图加特1646家餐厅中排名398</td></tr>
+        <tr><td>9gg.de</td><td>正面</td><td>8条</td><td>英文评论为主</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>值得注意的是，Google Maps 3.5分的综合评分具有一定的误导性。2018年餐厅经历了一次易主，过渡期集中出现了一批差评（主要批评装修风格改变、部分招牌菜消失等问题）。但从2019年下半年开始，评论风向明显回暖，此后连续多年保持高密度的5星好评。最新一条2026年2月的评论给出了5星满分，称其为"斯图加特最好的泰国餐厅之一，烹饪非常传统"。</p>
+</div>
+
+<div class="section-card">
+  <h3>食客评价精华</h3>
+  <p><strong>最大亮点——味道的正宗性。</strong> 多位曾去过泰国的食客将其味道与泰国当地做了直接对比，认为高度还原。一位食客写道："我们在泰国度假时积累了对味道和辣度的经验，这里吃到的味道跟泰国一模一样。"另一位评论者称它是"整个地区最好的泰国餐厅，比泰国当地的还好吃"。餐厅的风格偏向传统街头美食而非精致料理，这恰恰赢得了追求地道口味的食客的高度认可。<a href="https://krua-thai-bolan.foodpearl.com/" target="_blank">来源: FoodPearl</a></p>
+  <p><strong>服务热情与家庭氛围。</strong> 老板娘亲自下厨或接待，多条评论提及她热情好客的待客之道。有食客说"这里小而温馨，像家一样"。英文评论中也有简洁的总结："great food, great service, good prices"。</p>
+  <p><strong>午餐性价比突出。</strong> 午餐菜单定价在9.90-15.90€之间，分量充足，是性价比的高点。多位食客特别推荐午餐时段前来。</p>
+  <p><strong>需要留意的方面：</strong> 餐厅空间较小，厨房油烟可能沾衣；繁忙时段等待时间偶尔较长；建议午餐提前预订。</p>
+</div>
+
+<div class="section-card">
+  <h3>最受推荐菜品（来自食客评论）</h3>
+  <p>根据评论中的高频提及和 Wolt 外卖平台标注：<strong>Pad Thai</strong>（被誉为全斯图加特最好的）、<strong>馄饨汤</strong>、<strong>Tom Yam</strong>（冬阴功汤）、<strong>Massaman 咖喱鸡</strong>、<strong>Grapao 打抛鸡</strong>是食客最常点赞的菜品。咖喱类菜品可选择五个辣度等级。</p>
+</div>
+
+<div class="section-card">
+  <h3>竞争定位</h3>
+  <p>在斯图加特的泰国餐厅版图中，Krua Thai Bolan 与同街的 Kwan Kao（Rotebühlstraße 155，Google 4.7星）和 Lek's Thai（Google 4.5星）构成了本地食客心中的"正宗泰国菜三强"。相较于 Kwan Kao 更精致的路线，Krua Thai Bolan 走的是更朴实、更接地气的风格，价格也略为亲民，适合追求地道味道而非就餐仪式感的食客。<a href="https://threebestrated.de/thai-restaurants-in-stuttgart" target="_blank">来源: ThreeBestRated</a></p>
+</div>
+
+<!-- ==================== 第二章 ==================== -->
+<h2 id="ch2">第二章：前菜类菜品</h2>
+
+<h3 id="ch2-1">2.1 汤品 (Suppen)</h3>
+
+<!-- V01 冬阴功汤 -->
+<div class="dish-card">
+  <h4>冬阴功汤 (Tom Yam) — V01</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 蔬菜 5.50€ / 鸡肉 5.80€ / 虾 6.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.thespruceeats.com/thmb/nxFsHcEO_0yuZg3-f6wc_xi1tPQ=/2999x1999/filters:fill(auto,1)/tom-yum-soup-best-3217653-Hero_2-5b9bbd8246e0fb00251aca99.jpg" alt="Tom Yam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>冬阴功汤（ต้มยำ）是泰国最具代表性的酸辣汤，起源于中部河流地区，被视为泰国料理"香、酸、辣、咸"平衡的经典示范。汤底以柠檬草、南姜、青柠叶和辣椒等"冬阴三宝"的芳香料定义基本味型，先用虾头或鸡骨熬制高汤，再加入香料煮出辛香。调味依靠鱼露、青柠汁和辣椒酱，酸、辣、咸三味在口中精准平衡，尾韵有清新的柑橘香。草菇和番茄增添鲜甜，出锅前撒香菜提香。汤体清亮但味道层次饱满，先酸后辣，辅以南姜的清凉辛香。也有加入淡椰奶的"冬阴那"版本（Tom Yum Nam Khon），更显醇厚。这也是Wolt外卖平台上标注的人气菜品之一。<a href="https://hot-thai-kitchen.com/tom-yum-goong/" target="_blank">来源</a></p>
+</div>
+
+<!-- V02 椰奶汤 -->
+<div class="dish-card">
+  <h4>椰奶汤 (Tom Kha) — V02</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 蔬菜 6.20€ / 鸡肉 6.50€ / 虾 6.80€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.seriouseats.com/thmb/l-cYRx7wnYFyH-qKL1OflBPEdKs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210212-tom-kha-gai-vicky-wasik-seriouseats-13-93f9d4f5a2b04d17a2dfb2f9e4b65b66.jpg" alt="Tom Kha" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Tom Kha（ต้มข่า）意为"煮南姜"，与冬阴功同源，但以椰奶形成丝滑汤底，更温润柔和。经典做法是先用柠檬草、南姜、青柠叶煮出基底香气，再加入鸡肉或虾熬汤，随后倒入椰奶与少量椰浆，保持微沸避免分离。酸味来自青柠汁或罗望子，咸味靠鱼露，辣味由小米椒提供。汤色乳白，入口先是椰香和南姜的清凉木质气息，继而是酸辣平衡的收口。一位Google食客曾专门称赞这里的Tom Kha Gai是"我吃过的最好的之一"。相比冬阴功，Tom Kha辣度更柔和、口感更浓郁，常被视为雨季暖身汤品，也适合搭配糯米饭或米粉。<a href="https://www.seriouseats.com/creamy-tom-yam-kung-thai-hot-and-sour-soup-recipe" target="_blank">来源</a></p>
+</div>
+
+<!-- V03 粉丝汤 -->
+<div class="dish-card">
+  <h4>粉丝汤 (Tom Djüd Wunn Senn) — V03</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 6.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2020/11/tom-jude-woon-sen.jpg" alt="Tom Djüd Wunn Senn" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Tom Jued Woon Sen（ต้มจืดวุ้นเส้น）在泰语意为"清淡粉丝汤"，是泰国家常汤品的典型代表，强调清甜鲜美而非辛辣。汤底通常以鸡骨温火熬制，加入白胡椒、蒜头、香菜根提香，再放入泡软的粉丝。配料有鸡肉末、胡萝卜片、羊肚菌（木耳）、芹菜叶、黄瓜片等，既补充鲜味也带清爽口感。调味以鱼露与少量白胡椒为主，保持"จืด"（清淡）的特点。成品汤色清澈，入口先是胡椒与蒜香，随后是粉丝吸附的骨汤鲜甜。这道汤适合老人和儿童，也是泰国餐桌上平衡辣味菜的温和搭档，是不能吃辣的食客的安全选择。<a href="https://hot-thai-kitchen.com/glass-noodle-soup/" target="_blank">来源</a></p>
+</div>
+
+<!-- V04 云吞汤 -->
+<div class="dish-card">
+  <h4>云吞汤 (Wan Tan Suppe) — V04</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 6.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.eatingthaifood.com/wp-content/uploads/2014/11/thai-wonton-soup-recipe-1.jpg" alt="Wan Tan Suppe" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰式云吞汤（เกี๊ยวน้ำ）受华人移民影响，结合泰式调味形成独特风味。馅料用鸡肉末混合蒜、胡椒和鱼露调味，包入薄云吞皮后煮至半透明。高汤以鸡骨熬制，加入蒜头、白胡椒、香菜根。配菜常见胡萝卜片、大白菜、豆芽、葱段，出锅后撒炸蒜酥和香菜增香。值得一提的是，2026年2月最新的Google 5星评论特别将馄饨汤列为来店必点菜品，称其搭配Pad Thai是最佳组合。与中式云吞汤相比，泰式版本更强调鱼露与香菜根的风味。<a href="https://www.eatingthaifood.com/thai-wonton-soup-recipe/" target="_blank">来源</a></p>
+</div>
+
+<h3 id="ch2-2">2.2 小食 (Snacks)</h3>
+
+<!-- V05 脆皮虾 -->
+<div class="dish-card">
+  <h4>脆皮虾 (Gung Grob) — V05</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 7.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" alt="Gung Grob" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>脆皮虾（กุ้งกรอบ）是泰国街头常见的油炸小食。去壳大虾以鱼露、蒜末和白胡椒略腌，裹上面粉和椰蓉混合的干粉后入油锅炸至金黄。椰丝的加入让外壳带有淡淡椰香，与虾肉的甜味形成对比。成品外脆内嫩，搭配糖醋酱食用。风味以甜、咸、微辣为主，适合佐餐或下酒。</p>
+</div>
+
+<!-- V06 沙嗲鸡 -->
+<div class="dish-card">
+  <h4>沙嗲鸡 (Gai Saté) — V06</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 7.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg" alt="Gai Saté" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>沙嗲鸡（ไก่สะเต๊ะ）源于马来与爪哇的烤肉串做法，传入泰国后形成带椰奶、姜黄和香茅香气的独特版本。鸡肉先用椰奶、黄咖喱粉、姜黄、棕榈糖、鱼露等腌制使纤维软化，穿上竹签炭烤至表面略带焦斑、内里多汁。蘸酱是花生椰奶酱，以炒香花生碎、红咖喱酱、椰奶和棕榈糖慢煮到浓稠。配菜常有酸甜黄瓜泡菜（Ajaad），酸甜凉爽能平衡烤肉的油脂与香料。整体风味咸、甜、微辣并带烟熏与花生香，是泰式前菜的经典代表。<a href="https://recipetineats.com/thai-chicken-satay-peanut-sauce" target="_blank">来源</a></p>
+</div>
+
+<!-- V07 春卷 -->
+<div class="dish-card">
+  <h4>春卷 (Pho-Phia Thai) — V07</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 6.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://images.pexels.com/photos/221143/pexels-photo-221143.jpeg" alt="Pho-Phia Thai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰式炸春卷（ปอเปี๊ยะทอด）起源于华人春卷，经过泰式香料和蘸酱改良。馅料用粉丝、胡萝卜丝、卷心菜丝、木耳或豆芽，不含肉类。包紧后以中高温油炸到外皮金黄起泡，外皮酥脆、内馅保留蔬菜水分与微甜。搭配泰式糖醋蘸酱——以白醋、棕榈糖、鱼露和小米椒熬制，酸甜中带轻微辣感。这也是Wolt外卖平台上标注的热门前菜之一。</p>
+</div>
+
+<!-- V08 炸蔬菜 -->
+<div class="dish-card">
+  <h4>炸蔬菜 (Pak Tood) — V08</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 5.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg" alt="Pak Tood" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>炸蔬菜（ผักทอด）做法类似天妇罗或泰式面糊炸物。常用南瓜片、甜椒条、四季豆、胡萝卜或蘑菇，裹上低筋面粉、米粉和苏打水调成的面糊，部分加入姜黄粉或椰奶，使炸皮带有淡黄色或椰香。中高温油中炸至外层脆爽、内部保留水分，口感轻盈。搭配糖醋酱或甜辣酱食用。因素食友好且制作简单，是性价比最高的前菜之一。</p>
+</div>
+
+<!-- V09 炸豆腐 -->
+<div class="dish-card">
+  <h4>炸豆腐 (Touhu Tood) — V09</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 5.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://rachelcooksthai.com/wp-content/uploads/2016/01/Thai-Fried-Tofu-09.jpg" alt="Touhu Tood" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>炸豆腐（เต้าหู้ทอด）将硬豆腐切块沥干水分，裹上木薯粉或米粉以保持外皮干爽，中火炸到表面金黄酥脆、内部柔嫩。佐料为糖醋花生酱——以椰糖、米醋、蒜末、碎花生和辣椒调味，带有酸、甜、咸、坚果香的多层次口感。素食友好，口味特点是外酥内嫩、酱香突出。<a href="https://rachelcooksthai.com/thai-fried-tofu/" target="_blank">来源</a></p>
+</div>
+
+<!-- V10 炸鸡饺 -->
+<div class="dish-card">
+  <h4>炸鸡饺 (Giaw Groob) — V10</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 5.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://hungryforthai.com/inline/crispy-fried-wonton.D2D4wCOC_11mnqm.webp" alt="Giaw Groob" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>炸鸡饺（เกี๊ยวกรอบ）以云吞皮包裹鸡肉末制成的酥炸点心。馅料以香菜根、蒜、白胡椒调香，加入鱼露、酱油提鲜，裹成小云吞状后入油锅炸至外皮金黄。口感外层极脆、内部多汁带椒蒜香，搭配糖醋蘸酱。菜式源于华人云吞与泰式甜辣调味的结合，深受儿童和成年人喜爱。</p>
+</div>
+
+<!-- V11 鸡肉面包 -->
+<div class="dish-card">
+  <h4>鸡肉面包 (Kanom Pang Na Gai) — V11</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 8.50€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.kruathai.pt/img/dishes/thumbnails/chickentoast.jpg" alt="Kanom Pang Na Gai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>鸡肉面包（ขนมปังหน้าไก่）是经典泰式油炸吐司小食。白吐司切块后抹上鸡肉泥（鸡肉末混合香菜根、蒜、白胡椒、鱼露调味），下油锅炸至面包边缘金黄、肉面熟透。配菜是黄瓜小泡菜和花生椰奶蘸汁。口味层次包含面包的酥香、鸡肉的鲜甜胡椒香、花生的坚果感，以及蘸汁的酸甜平衡。被认为源自中式炸方包与泰式蘸酱的融合。</p>
+</div>
+
+<h3 id="ch2-3">2.3 沙拉 (Salat)</h3>
+
+<!-- S20 青木瓜沙拉 -->
+<div class="dish-card">
+  <h4>青木瓜沙拉 (Som Tam Thai) — S20</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 12.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 辣到非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.seriouseats.com/thmb/yKNZ9ICJC5ZNhzcYHdHENxogpFw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210928-Som-Tam-Thai-green-papaya-salad-vicky-wasik-24-f0d666fc609f49a0b9f34897bd2c6303.jpg" alt="Som Tam Thai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Som Tam Thai（ส้มตำไทย）起源于泰国东北伊森地区，以臼舂手法将未熟青木瓜丝、胡萝卜丝、干虾、蒜瓣和小米椒捣拌出独特脆口感。调味以鱼露、棕榈糖和青柠汁形成酸甜咸辣的平衡，再加入长豆角、圣女果和烤花生增加层次。香气混合蒜辣与柑橘清新，口感脆爽、辣度直击味蕾，但酸甜让辣感显得清爽。传统配糯米饭或烤鸡，强调现做现拌以保持木瓜丝的脆度。这也是Wolt外卖平台上标注的热门菜品。<a href="https://www.seriouseats.com/som-tam-green-papaya-salad-5208332" target="_blank">来源</a></p>
+</div>
+
+<!-- S21 粉丝沙拉 -->
+<div class="dish-card">
+  <h4>粉丝沙拉 (Yam Wun Sen) — S21</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 10.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 辣到非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://cinnamonandcoriander.com/wp-content/uploads/2017/08/thai-glass-noodle-salad-yum-woon-seen.jpg" alt="Yam Wun Sen" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Yam Wun Sen（ยำวุ้นเส้น）是泰式凉拌粉丝，以绿豆粉丝的弹滑为主角，搭配虾、鸡肉末、洋葱、姜、花生和香菜。调味依靠鱼露、青柠汁、小米椒和糖形成酸辣咸甜的泰式味型。粉丝趁有温度时吸收酱汁，入口柔韧带劲，虾肉鲜甜、肉末增添油脂香。凉爽开胃，适合作为下酒菜或轻食主菜。<a href="https://hot-thai-kitchen.com/glass-noodle-salad-v2/" target="_blank">来源</a></p>
+</div>
+
+<!-- S22 牛肉沙拉 -->
+<div class="dish-card">
+  <h4>牛肉沙拉 (Yam Nüa) — S22</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 12.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 酸辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://deliciousdetour.com/wp-content/uploads/2023/04/Yum-Nua-2.jpg" alt="Yam Nüa" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Yam Nüa（ยำเนื้อ）选用牛里脊或牛腿肉快火煎至五到七成熟，确保嫩中带汁。调味汁由鱼露、青柠汁、棕榈糖和碎辣椒组成，加入红洋葱、黄瓜、番茄和新鲜香菜、薄荷。肉趁温热拌入酱汁，肉香与柑橘酸度相互提亮，辣椒带来快速的热感。通常作为开胃菜或轻主菜，体现泰式"辣、酸、咸、甜"四味并重的平衡美学。</p>
+</div>
+
+<!-- S23 鱿鱼沙拉 -->
+<div class="dish-card">
+  <h4>鱿鱼沙拉 (Yam Pla Müg) — S23</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 12.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 酸辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hungryinthailand.com/wp-content/uploads/2024/01/authentic-thai-squid-salad-768x1024.webp" alt="Yam Pla Müg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Yam Pla Müg（ยำปลาหมึก）以新鲜鱿鱼圈和触须快速汆烫30-60秒至微卷，保持弹牙口感，再与青柠汁、鱼露、碎小米椒和蒜末调成的酸辣汁拌匀。配洋葱片、芹菜茎、番茄和大量香菜。柠檬酸和鱼露咸鲜凸显海味，辣椒带来直白的辛辣。强调"热食材+冷调味"的瞬间融合，既保持鱿鱼鲜嫩又锁住海水香气。</p>
+</div>
+
+<!-- S24 鸡肉碎沙拉 -->
+<div class="dish-card">
+  <h4>鸡肉碎沙拉 (Laab Gai) — S24</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 10.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 酸辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2016/06/laab-gai-sq-1.jpg" alt="Laab Gai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Laab Gai（ลาบไก่）源自泰国东北伊森地区，核心是现炒的鸡肉末，与鱼露、青柠汁、干辣椒粉和炒香磨细的糯米粉（khao khua）拌匀。配料有薄切小洋葱、香菜、薄荷叶、葱段。口味特征是酸、咸、辣与烘烤糯米的坚果香并存。传统配糯米饭和生菜、卷心菜等生食蔬菜，讲究"热肉末与冷香草"快速拌合。是伊森餐桌和夜市小吃的代表。<a href="https://hot-thai-kitchen.com/laab-gai/" target="_blank">来源</a></p>
+</div>
+
+<!-- S25 鸭肉碎沙拉 -->
+<div class="dish-card">
+  <h4>鸭肉碎沙拉 (Laab Bedd) — S25</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 10.20€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 酸辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://static.vecteezy.com/system/resources/previews/049/330/177/large_2x/larb-ped-spicy-minced-duck-salad-on-wood-table-with-fresh-vegetables-thai-local-food-recipe-larb-ped-delicious-menu-containing-ingredients-of-many-thai-herbs-photo.jpg" alt="Laab Bedd" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Laab Bedd（ลาบเป็ด）是以鸭胸肉末为主的伊森风味酸辣沙拉，相比鸡肉版更具油香与野味。鸭胸通常先去皮或将皮煎脆后切碎，利用余温拌入鱼露、青柠汁、干辣椒粉与烤糯米粉。鸭脂的醇厚与青柠酸、辣椒辛形成鲜明对比，配糯米饭和生菜蘸吃。是下酒与共享餐桌的浓烈风味代表。</p>
+</div>
+
+<!-- ==================== 第三章 ==================== -->
+<h2 id="ch3">第三章：主菜 — 鸡肉 (Chicken)</h2>
+
+<!-- H30 帕能咖喱鸡 -->
+<div class="dish-card">
+  <h4>帕能咖喱鸡 (Panäng Gai) — H30</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pork_Penang_Curry.jpg/1280px-Pork_Penang_Curry.jpg" alt="帕能咖喱鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>帕能咖喱（พะแนงไก่）是泰国中部最经典的咖喱菜式之一，历史可追溯至十九世纪末。"帕能"可能源自马来语"panggang"（烧烤）。与其他泰式咖喱不同，帕能咖喱的酱汁非常浓稠，更像是裹着厚酱的炒菜。咖喱酱由干辣椒、南姜、香茅、青柠叶皮、芫荽根、孜然、花生等研磨而成，配合椰奶浓缩后产生甜、咸、微辣且带坚果香的层次丰富口感。花生是帕能咖喱的标志性特征。成菜后撒上青柠叶丝，清新的柑橘香气平衡浓郁的咖喱风味。</p>
+</div>
+
+<!-- H31 红咖喱鸡 -->
+<div class="dish-card">
+  <h4>红咖喱鸡 (Gäng Ped Gai) — H31</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Thai_red_chicken_curry.jpg/1280px-Thai_red_chicken_curry.jpg" alt="红咖喱鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>红咖喱鸡（แกงเผ็ดไก่），"Ped"在泰语中意为"辣"。红咖喱酱以大量干红辣椒为核心，搭配蒜、红葱头、南姜、香茅、芫荽根和虾酱研磨而成。先将咖喱酱在椰奶中炒至油脂分离，再加入鸡肉和竹笋同煮。椰奶的甜美与红咖喱的辛辣形成鲜明对比。泰式罗勒在起锅前拌入，带来清甜草本香气。色泽红亮、香气馥郁，是口味最直接、最具冲击力的咖喱代表。</p>
+</div>
+
+<!-- H32 红咖喱鸡配菠萝 -->
+<div class="dish-card">
+  <h4>红咖喱鸡配菠萝 (Gäng Khua Gai) — H32</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Kaeng_khua_pla_chang_dam.jpg/1280px-Kaeng_khua_pla_chang_dam.jpg" alt="红咖喱鸡配菠萝" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>"Gaeng Khua"是一种独特的咖喱类型，字面意思是"干炒咖喱"，指用红咖喱酱在椰奶中慢炒直到浓稠。新鲜菠萝块的加入是灵魂所在——菠萝天然的酸甜为浓郁的咖喱带来明亮清爽的对比。菠萝应选择不太熟的品种，以保留适度酸度和脆度。甜、酸、咸、辣四味在口中同时绽放又彼此制约，妙不可言。</p>
+</div>
+
+<!-- H33 绿咖喱鸡 -->
+<div class="dish-card">
+  <h4>绿咖喱鸡 (Gäng Khiaw Wan Gai) — H33</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Thai_green_chicken_curry_and_target_roti.jpg/1280px-Thai_green_chicken_curry_and_target_roti.jpg" alt="绿咖喱鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>绿咖喱鸡（แกงเขียวหวานไก่）是泰国在国际上最具辨识度的咖喱。有趣的是，泰语名称中的"หวาน"（wan，甜）并非形容味道，而是描述一种温润柔和的绿色。诞生于拉玛六世至七世时期（1908-1926年）。尽管看起来颜色清新温和，绿咖喱的辣度实际上往往超过红咖喱，因为使用新鲜辣椒而非干辣椒。配以迷你茄子、竹笋、四季豆，最后撒上泰式罗勒叶和青柠叶，色泽碧绿、香气层叠。</p>
+</div>
+
+<!-- H34 玛莎曼咖喱鸡 ⭐ -->
+<div class="dish-card recommended">
+  <h4>玛莎曼咖喱鸡 (Massaman Gai) — H34</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Massaman_Curry_Chicken.jpg/1280px-Massaman_Curry_Chicken.jpg" alt="玛莎曼咖喱鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>玛莎曼咖喱（แกงมัสมั่นไก่）是泰国咖喱中最独特的存在——一道融合了波斯、印度和马来香料传统的菜肴。"Massaman"源自波斯语"mosalmân"（穆斯林），可追溯至十七世纪阿瑜陀耶王朝。拉玛二世国王曾在诗歌中赞颂它。2011年CNN将玛莎曼咖喱评为全球最美味食物第一名。咖喱酱使用了豆蔻、肉桂、丁香、八角、肉豆蔻等在其他泰国咖喱中罕见的温暖香料，与鸡肉、土豆、洋葱和花生在椰奶中慢炖。口感温润醇厚，辣度较低，是最适合初次品尝泰国咖喱的入门之选，也是食客评论中高频推荐的菜品之一。</p>
+</div>
+
+<!-- H35 丛林咖喱鸡 -->
+<div class="dish-card">
+  <h4>丛林咖喱鸡 (Gäng Pha Gai) — H35</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gaeng_pa_moo.jpg/1280px-Gaeng_pa_moo.jpg" alt="丛林咖喱鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>丛林咖喱（แกงป่าไก่）是泰国咖喱中最原始的一种，起源于泰国北部森林地区。因当地椰子稀少，以水或高汤为基底，不使用任何椰奶。没有椰奶的缓冲，辣椒的灼热感直接而凶猛。指姜（grachai）是丛林咖喱的灵魂香料，带有清凉的草药气息。菜中加入泰式茄子、竹笋、四季豆、玉米笋等蔬菜和圣罗勒。这道菜非常辣，适合对辛辣有较高接受度的食客。</p>
+</div>
+
+<!-- H36 打抛鸡 ⭐ -->
+<div class="dish-card recommended">
+  <h4>打抛鸡 (Grapao Gai) — H36</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pad_kra_pao_moo_grob_kai_dao_%28fried_holy_basil_with_crispy_pork_and_fried_egg%29.jpg/1280px-Pad_kra_pao_moo_grob_kai_dao_%28fried_holy_basil_with_crispy_pork_and_fried_egg%29.jpg" alt="打抛鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>打抛鸡（ผัดกะเพราไก่）是泰国街头美食的绝对王者，也是泰国人日常午餐最频繁的选择。"กะเพรา"（Krapao）指圣罗勒（Holy Basil），有着比普通罗勒更浓烈的胡椒般辛辣香气，是不可替代的灵魂食材。用石臼将蒜和鸟眼辣椒捣碎，在极高温度的炒锅中爆香后加入鸡肉大火翻炒，以鱼露、酱油和蚝油调味，最后拌入大把圣罗勒叶。传统配白米饭和煎到边缘焦脆的太阳蛋。这是Wolt外卖平台上标注的人气菜品之一，非常辣但辣得直接、痛快、令人上瘾。</p>
+</div>
+
+<!-- H37 姜炒鸡 -->
+<div class="dish-card">
+  <h4>姜炒鸡 (Gai Pad Khing) — H37</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Gai_pad_khing.jpg/1280px-Gai_pad_khing.jpg" alt="姜炒鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>姜炒鸡（ไก่ผัดขิง）是泰国家常菜中最温和亲切的一道。新鲜姜丝是整道菜的主角，热度来自姜的温暖辛香而非辣椒的灼烧感。先将蒜末和豆酱在油中炒出浓香，加入鸡肉和大量姜丝翻炒，再加入木耳、洋葱、甜椒和蘑菇。调味以酱油、蚝油、鱼露和少许糖为主。姜的健康功效使其在泰国尤其受注重养生人群的欢迎，也是感冒季节的首选"药膳"。</p>
+</div>
+
+<!-- H38 腰果鸡 -->
+<div class="dish-card">
+  <h4>腰果鸡 (Gai Pad Medmamuang) — H38</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Cashew_chicken.jpg/1280px-Cashew_chicken.jpg" alt="腰果鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>腰果鸡（ไก่ผัดเม็ดมะม่วงหิมพานต์）受中国饮食文化影响深远。"เม็ดมะม่วงหิมพานต์"是泰语中腰果的全称，直译为"喜马拉雅芒果籽"。鸡肉裹薄面粉炸至外酥里嫩，腰果低温烘烤至金黄，在大火中与蒜、洋葱、彩椒快速翻炒，以酱油、蚝油和辣椒酱调制的酱汁将所有食材裹住。"软糯与酥脆""咸鲜与微甜"的双重对比，辣度温和，老少皆宜。</p>
+</div>
+
+<!-- H39 炒蔬菜鸡 -->
+<div class="dish-card">
+  <h4>炒蔬菜鸡 (Pad Pak Ruamid Gai) — H39</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 17.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Pad_Pak_Ruam.jpg/1280px-Pad_Pak_Ruam.jpg" alt="炒蔬菜鸡" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>炒蔬菜鸡（ผัดผักรวมมิตรไก่）是最基础也最灵活的一道菜。"รวมมิตร"（Ruam Mit）意思是"朋友们聚在一起"，各种蔬菜和谐共处。蒜油爆香后鸡肉快速翻炒，蔬菜按烹饪时间依次下锅。调味简洁：蚝油、酱油、鱼露、少许糖。全程大火快炒，追求蔬菜的脆嫩和鲜亮色泽。这是菜单上辣度最低的选项，适合不太能吃辣的食客。</p>
+</div>
+
+<!-- ==================== 第四章 ==================== -->
+<h2 id="ch4">第四章：主菜 — 鸭肉 (Duck)</h2>
+
+<!-- E50 烤鸭红咖喱 -->
+<div class="dish-card">
+  <h4>烤鸭红咖喱 (Gäng Bedd Yang) — E50</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Kaeng_phet_pet_yang.jpg/1280px-Kaeng_phet_pet_yang.jpg" alt="烤鸭红咖喱" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>烤鸭红咖喱（แกงเผ็ดเป็ดย่าง）是泰国咖喱中最华丽的一道——将中式烤鸭的丰腴脂香与泰式红咖喱的辛烈芬芳巧妙融合。菜中加入了樱桃番茄、葡萄、荔枝和菠萝——每种水果都有功能：菠萝的酸、番茄的鲜、葡萄和荔枝的甜蜜，层层叠加后与浓厚的咖喱形成令人惊叹的味觉维度。水果的清新恰到好处地解除了鸭肉和椰奶的油腻感。在泰国传统节庆和宴客场合尤为常见，是一道兼具视觉之美和味觉之丰的"压轴"级菜肴。</p>
+</div>
+
+<!-- E51 绿咖喱鸭 -->
+<div class="dish-card">
+  <h4>绿咖喱鸭 (Gäng Khiaw Wann Bedd) — E51</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Thai_green_chicken_curry_and_target_roti.jpg/1280px-Thai_green_chicken_curry_and_target_roti.jpg" alt="绿咖喱鸭" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>绿咖喱鸭（แกงเขียวหวานเป็ด）是绿咖喱家族中最丰盛奢华的版本。鸭肉天然的脂香和野味感与绿咖喱酱的清新辛辣形成绝妙互补——鸭肉的浓郁被绿咖喱的草本清香提亮，鸭脂又为咖喱增添了丝滑质感。迷你茄子略带苦涩的口感是传统搭配，与甜润的椰奶和辛辣的咖喱形成有趣的三角平衡。</p>
+</div>
+
+<!-- E52 腰果鸭 -->
+<div class="dish-card">
+  <h4>腰果鸭 (Bedd Pad Medmamuang) — E52</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Cashew_chicken.jpg/1280px-Cashew_chicken.jpg" alt="腰果鸭" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>腰果鸭（เป็ดผัดเม็ดมะม่วงหิมพานต์）是腰果炒菜的豪华版本。鸭肉比鸡肉更肥美多汁，其野禽风味与烤至金黄的腰果形成"丰腴与酥脆"的精彩对比。酱汁以蚝油、酱油和泰式辣椒酱（Nam Prik Pao）调制，甜咸适口的光亮釉面。整体辣度温和可控，老少皆宜。</p>
+</div>
+
+<!-- E53 醉酒鸭 -->
+<div class="dish-card">
+  <h4>醉酒鸭 (Bedd Pad Khiemao) — E53</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Phad_khi_mao_kung.jpg/1280px-Phad_khi_mao_kung.jpg" alt="醉酒鸭" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>醉酒鸭（เป็ดผัดขี้เมา），"ขี้เมา"（Khi Mao）在泰语中意为"醉鬼"。传说因为太辣太刺激，只有喝醉的人才敢吃；也有说法是泰国人深夜饮酒后最渴望的解酒夜宵。辣椒蒜酱由鸟眼辣椒、蒜和虾酱捣碎而成，辣度极猛。鸭肉与茄子、豆角、竹笋在大火中快速翻炒，圣罗勒的胡椒般辛香与辣椒的灼热交织，令人上瘾。</p>
+</div>
+
+<!-- E54 蔬菜炒鸭 -->
+<div class="dish-card">
+  <h4>蔬菜炒鸭 (Pad Pag Ruamid Bedd) — E54</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Pad_Pak_Ruam.jpg/1280px-Pad_Pak_Ruam.jpg" alt="蔬菜炒鸭" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>蔬菜炒鸭（ผัดผักรวมมิตรเป็ด）是鸭肉菜单中最清淡温和的选项。让新鲜蔬菜和鸭肉本身的风味成为焦点，各种时令蔬菜在大火快炒下保持鲜亮色泽和脆嫩口感。以蚝油、酱油、鱼露和少许糖简单调味。几乎不辣，适合所有口味的食客。</p>
+</div>
+
+<!-- E55 青咖喱鸭配鲜胡椒 -->
+<div class="dish-card">
+  <h4>青咖喱鸭配鲜胡椒 (Bedd Pad Prig Thai Oon) — E55</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Kaeng_khua_pla_chang_dam.jpg/1280px-Kaeng_khua_pla_chang_dam.jpg" alt="青咖喱鸭配鲜胡椒" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>这道菜以新鲜青胡椒粒（พริกไทยอ่อน）为灵魂——胡椒在成熟干燥之前的新鲜状态，一串串翠绿的小珠子，口感清新多汁，带有独特的麻辣感和微微的草本清香。不同于干胡椒粉的呛辣，新鲜胡椒的辣是鲜活的、令人愉悦的。鸭肉的丰腴与新鲜胡椒的清爽麻辣形成绝妙对比。这种"新鲜胡椒风味"在西方极为少见，是体验正宗泰国味道的绝佳机会。</p>
+</div>
+
+<!-- E56 姜炒鸭 -->
+<div class="dish-card">
+  <h4>姜炒鸭 (Bedd Pad Khing) — E56</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Gai_pad_khing.jpg/1280px-Gai_pad_khing.jpg" alt="姜炒鸭" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>姜炒鸭（เป็ดผัดขิง）是姜炒系列的鸭肉版本。大量姜丝的辛香在鸭肉的丰腴脂香中得到精妙平衡——姜丝的清新化解了鸭肉的油腻，鸭脂也让姜的辣味变得更温润。配以羊肚菌、洋葱、蘑菇、甜椒和韭菜。辣度微温，是泰国家庭中备受喜爱的养生型家常菜。</p>
+</div>
+
+<!-- ==================== 第五章 ==================== -->
+<h2 id="ch5">第五章：主菜 — 牛肉 (Beef)</h2>
+
+<!-- R60 帕能咖喱牛肉 -->
+<div class="dish-card">
+  <h4>帕能咖喱牛肉 (Panäng Nüa) — R60</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pork_Penang_Curry.jpg/1280px-Pork_Penang_Curry.jpg" alt="帕能咖喱牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>帕能咖喱牛肉（พะแนงเนื้อ）是帕能咖喱家族中最经典、最受推崇的版本。牛肉能在浓稠的咖喱酱中产生更深邃的风味——牛肉的铁质感和肉香与花生的坚果香、椰奶的甜润形成三重奏。酱汁浓稠到可以裹住每一片肉，也有将牛肋骨或牛腱慢炖至软烂的做法。成菜后撒上青柠叶丝和红辣椒丝，清新柑橘香气为浓重的咖喱带来不可或缺的提亮效果。</p>
+</div>
+
+<!-- R61 绿咖喱牛肉 -->
+<div class="dish-card">
+  <h4>绿咖喱牛肉 (Gäng Khiaw Wann Nüa) — R61</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Kaeng_khiao_wan_nuea.jpg/1280px-Kaeng_khiao_wan_nuea.jpg" alt="绿咖喱牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>绿咖喱牛肉（แกงเขียวหวานเนื้อ）需要更长的炖煮时间让牛肉变得软嫩，但这恰好也让牛肉有更多时间吸收咖喱的复杂香气。配以竹笋、迷你茄子和四季豆，传统搭配茉莉香米或发酵米线食用。</p>
+</div>
+
+<!-- R62 红咖喱牛肉 -->
+<div class="dish-card">
+  <h4>红咖喱牛肉 (Gäng Ped Nüa) — R62</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Thai_red_chicken_curry.jpg/1280px-Thai_red_chicken_curry.jpg" alt="红咖喱牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>红咖喱牛肉（แกงเผ็ดเนื้อ）以鲜艳的红色、浓烈的辣味和醇厚的椰香著称。红咖喱酱的核心是大量干红辣椒，赋予标志性的深红色泽和直接辛辣感。竹笋、迷你茄子和泰式罗勒是传统配菜。辣度比帕能和玛莎曼咖喱都高，更直接更刺激。</p>
+</div>
+
+<!-- R63 青咖喱炒牛肉配鲜胡椒 -->
+<div class="dish-card">
+  <h4>青咖喱炒牛肉配鲜胡椒 (Nüa Pad Prig Thai-Oon) — R63</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Kaeng_khua_pla_chang_dam.jpg/1280px-Kaeng_khua_pla_chang_dam.jpg" alt="青咖喱炒牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>以新鲜青胡椒粒为灵魂——一串串翠绿饱满的小珠子，带有鲜活的麻辣感和草本芬芳。牛肉薄片大火快速翻炒，配竹笋、迷你茄子、玉米笋等蔬菜。牛肉的铁质鲜香在新鲜胡椒的刺激下更加突出，呈现粗犷与清新并存的独特风格。</p>
+</div>
+
+<!-- R64 醉酒牛肉 -->
+<div class="dish-card">
+  <h4>醉酒牛肉 (Nüa Pad Khiemao) — R64</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Phad_khi_mao_kung.jpg/1280px-Phad_khi_mao_kung.jpg" alt="醉酒牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>醉酒牛肉（เนื้อผัดขี้เมา）的辣椒蒜酱由鸟眼辣椒、蒜和虾酱捣碎而成。虾酱的加入是醉酒系列菜式区别于一般辣炒的关键——它带来深沉的发酵鲜味，与辣椒的灼热和蒜的锐利交织，产生复合猛烈的味觉冲击。牛肉薄片在大火中快速翻炒至微焦，与茄子、竹笋、豆角和圣罗勒在浓烈的辣酱中翻滚。名副其实的"非常辣"，适合真正热爱辛辣的勇者。</p>
+</div>
+
+<!-- R65 丛林咖喱牛肉 -->
+<div class="dish-card">
+  <h4>丛林咖喱牛肉 (Gäng Pha Nüa) — R65</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gaeng_pa_moo.jpg/1280px-Gaeng_pa_moo.jpg" alt="丛林咖喱牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>丛林咖喱牛肉（แกงป่าเนื้อ）是泰国咖喱中最辣、最"野性"的一种。不含任何椰奶，以水或高汤为基底。没有椰奶的柔化，辣椒和香草的味道赤裸而猛烈。指姜（กระชาย）是标志性香料。牛肉的铁质鲜味在清澈的辣汤中格外突出，整道菜呈现原始、粗犷的力量感。</p>
+</div>
+
+<!-- R66 姜炒牛肉 -->
+<div class="dish-card">
+  <h4>姜炒牛肉 (Nüa Pad Khing) — R66</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Gai_pad_khing.jpg/1280px-Gai_pad_khing.jpg" alt="姜炒牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>姜炒牛肉（เนื้อผัดขิง），新鲜姜丝的"辣"是温和而持久的辛香——像温泉般的和煦热度。牛肉薄片在蒜末和豆酱底味中快速翻炒，配大量姜丝、木耳、洋葱和蘑菇。以酱油、蚝油、鱼露调味，追求咸鲜甜的和谐。味道丰富但不过分刺激，特别适合冬日暖胃。</p>
+</div>
+
+<!-- R67 腰果牛肉 -->
+<div class="dish-card">
+  <h4>腰果牛肉 (Nüa Pad Medmamuang) — R67</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Cashew_chicken.jpg/1280px-Cashew_chicken.jpg" alt="腰果牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>腰果牛肉（เนื้อผัดเม็ดมะม่วงหิมพานต์）的精髓在于口感的多层次——牛肉的弹韧、腰果的酥脆、蔬菜的清爽，每一口都有不同的惊喜。酱汁以蚝油、酱油和泰式辣椒酱调制，甜咸鲜辣的复合风味被腰果的油脂和香甜进一步放大。整体辣度不高。</p>
+</div>
+
+<!-- R68 打抛牛肉 -->
+<div class="dish-card">
+  <h4>打抛牛肉 (Grapao Nüa) — R68</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pad_kra_pao_moo_grob_kai_dao_%28fried_holy_basil_with_crispy_pork_and_fried_egg%29.jpg/1280px-Pad_kra_pao_moo_grob_kai_dao_%28fried_holy_basil_with_crispy_pork_and_fried_egg%29.jpg" alt="打抛牛肉" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>打抛牛肉（ผัดกะเพราเนื้อ）使用薄切牛肉片，保持嚼劲和鲜嫩，在大火翻炒中形成诱人的微焦表面。关键在于"火候"和"速度"——蒜和鸟眼辣椒用石臼粗略捣碎释放精油，在极热的炒锅中爆香后下入牛肉。牛肉的铁质鲜味在辣椒和圣罗勒的衬托下更加突出。非常辣，是泰国街头美食精神的完美体现——快速、直接、火辣、过瘾。</p>
+</div>
+
+<!-- ==================== 第六章 ==================== -->
+<h2 id="ch6">第六章：主菜 — 鱼类 (Fish)</h2>
+
+<!-- F70 红咖喱三文鱼 -->
+<div class="dish-card">
+  <h4>红咖喱三文鱼 (Plaa Shuu Shii) — F70</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 24.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://rasamalaysia.com/wp-content/uploads/2024/04/choo-chee-salmon-thumb.jpg" alt="Choo Chee Salmon" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Plaa Shuu Shii（即Choo Chee Pla，ฉู่ฉี่ปลา）是泰国中南部经典红咖喱鱼。"Choo Chee"源于形容浓稠质地的拟声词，也有人认为得名于咖喱酱在热油中的"滋滋"声。三文鱼排先煎至金黄酥脆，再淋上红咖喱酱与浓椰奶熬制的醇厚酱汁，撒入切丝的青柠叶和红辣椒。酱汁比普通红咖喱更浓稠，接近酱料而非汤汁的质地，搭配四季豆的爽脆口感，层次丰富。<a href="https://asianinspirations.com.au/recipes/thai-red-curry-salmon-choo-chee-pla-salmon/" target="_blank">来源</a></p>
+</div>
+
+<!-- F71 姜味煎三文鱼 -->
+<div class="dish-card">
+  <h4>姜味煎三文鱼 (Plaa Jian) — F71</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 24.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Pla_jian.jpg/800px-Pla_jian.jpg" alt="Pla Jian" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Plaa Jian（ปลาเจี๋ยน）是历史悠久的泰式传统煎鱼。传统做法中鱼要先用大蒜、姜末、黄豆酱、鱼露、虾酱、棕榈糖和酱油混合腌制至少一小时。Krua Thai Bolan的版本搭配了姜丝、甜椒、洋葱、芹菜、羊肚菌和新鲜香菜。姜是灵魂，羊肚菌的加入是颇为巧妙的欧式改良，其浓郁的泥土芳香为泰式经典增添了高级鲜味层次。<a href="https://importfood.com/recipes/recipe/217-thai-style-fried-fish-pla-jian" target="_blank">来源</a></p>
+</div>
+
+<!-- F72 醉酒三文鱼 -->
+<div class="dish-card">
+  <h4>醉酒三文鱼 (Plaa Pad Khiemao) — F72</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 24.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2021/07/pad-kee-mao-sq-2.jpg" alt="Pad Khi Mao Fish" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>"醉酒"系列的鱼类演绎版。三文鱼与大量蒜末、辣椒高温猛火快速翻炒，配竹笋、四季豆、茄子、新鲜青花椒粒和青柠叶。青花椒的加入是最独特之处——在口中释放清凉的、带有微麻感的刺激，与辣椒的灼烧形成有趣对比。火候猛烈，调味大胆奔放。</p>
+</div>
+
+<!-- F73 整条炸罗非鱼配辣椒蒜酱 -->
+<div class="dish-card">
+  <h4>整条炸罗非鱼配辣椒蒜酱 (Plaa Lad Prig) — F73</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 24.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://delishglobe.com/wp-content/uploads/2024/10/Thai-Pla-Rad-Prik.png" alt="Pla Rad Prik" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Plaa Lad Prig（ปลาราดพริก），字面意思"浇了辣椒的鱼"，从街头摊档到高级餐厅都极受欢迎。整条红罗非鱼油炸至外皮金黄酥脆，浇上用鸟眼辣椒、大蒜、红葱头与罗望子酱、棕榈糖和鱼露熬制的浓稠辣椒酱。罗望子提供明亮酸味，棕榈糖带焦糖般的甜蜜，鱼露贡献深沉鲜味——四味在口中同时绽放。每一口都能感受到酥脆鱼皮与嫩滑鱼肉的质地对比。<a href="https://delishglobe.com/recipe/thai-pla-rad-prik/" target="_blank">来源</a></p>
+</div>
+
+<!-- F74 整条炸罗非鱼配绿咖喱 -->
+<div class="dish-card">
+  <h4>整条炸罗非鱼配绿咖喱 (Plaa Tood Khiaw Waan) — F74</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 24.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://rachelcooksthai.com/wp-content/uploads/2021/07/green-curry-fish-1.jpg" alt="Green Curry Fried Fish" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>将两种泰国经典烹饪手法合而为一：酥脆的整条炸鱼遇上芳香浓郁的绿咖喱酱。整条红罗非鱼炸至金黄后，淋上绿咖喱酱与椰奶熬制的浓汁，加入竹笋、迷你圆茄、四季豆和泰式罗勒。妙处在于多重质地的碰撞——酥脆的鱼皮、丝滑的鱼肉、爽脆的竹笋、软糯的茄子。<a href="https://rachelcooksthai.com/green-curry-with-fish-and-green-peppercorns/" target="_blank">来源</a></p>
+</div>
+
+<!-- ==================== 第七章 ==================== -->
+<h2 id="ch7">第七章：主菜 — 海鲜 (Seafood)</h2>
+
+<!-- M80 绿咖喱虾 -->
+<div class="dish-card">
+  <h4>绿咖喱虾 (Gäng Khiaw Waan Gung) — M80</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2022/06/green-curry-new-sq-1.jpg" alt="Thai Green Curry Prawns" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>绿咖喱的海鲜版本。椰奶赋予丝绒般的柔滑质地和天然甜味，新鲜大虾在咖喱中短暂烹煮后依然弹牙紧致。迷你圆茄吸饱咖喱酱汁后绵软入味，竹笋增添清脆口感，泰式罗勒释放甘草与丁香混合的芬芳。搭配茉莉香米饭，是感受泰国南部海鲜风味的绝佳选择。</p>
+</div>
+
+<!-- M81 红咖喱虾配菠萝 -->
+<div class="dish-card">
+  <h4>红咖喱虾配菠萝 (Gäng Khua Gung) — M81</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://praneesthaikitchen.com/wp-content/uploads/2015/06/IMG_2775.jpg" alt="Gaeng Khua Kung Pineapple" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>红咖喱搭配新鲜菠萝和大虾。"Khua"是"干煎"的意思，要先用椰奶油脂层将咖喱酱充分炒香。菠萝的甜酸味与红咖喱的辛辣和椰奶的醇厚形成三角平衡——甜、酸、辣三种味觉同时绽放又彼此制约。因其酸甜爽口的特质，在炎热天气里特别受欢迎，被视为"夏日咖喱"。</p>
+</div>
+
+<!-- M82 辣椒酱炒虾 -->
+<div class="dish-card">
+  <h4>辣椒酱炒虾 (Gung Pad Namprig Pao) — M82</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2019/02/shrimp-chili-paste-stir-fry-sq.jpg" alt="Goong Pad Nam Prik Pao" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>以泰式辣椒酱 Nam Prik Pao 为灵魂调味料。Nam Prik Pao 是用干辣椒、大蒜、红葱头慢烘烤后与棕榈糖和虾酱研磨而成的焦香辣椒酱，有时被称为"辣椒果酱"。配洋葱、甜椒、蘑菇和韭菜。虽含辣椒但经烘烤和糖的中和后辣度温润可亲，更突出深沉的焦糖辛香。<a href="https://www.seriouseats.com/goong-pad-nam-prik-pao-5248460" target="_blank">来源</a></p>
+</div>
+
+<!-- M83 青胡椒炒虾 -->
+<div class="dish-card">
+  <h4>青胡椒炒虾 (Gung Pad Prig Thai-Oon) — M83</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.riversidethaicooking.com/wp-content/uploads/2024/04/stir-fried-beef-with-fresh-peppercorns-11.jpg" alt="Pad Prik Thai On Shrimp" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>突出鲜绿花椒风味的泰式炒虾。新鲜青胡椒粒在泰国菜中被视为蔬菜般的食材，整串投入翻炒。追求的是清新明亮的辛辣感——来自新鲜花椒的自然风味，而非酱料的复合浓烈。虾肉的甜嫩与胡椒的辛爽相互映衬。</p>
+</div>
+
+<!-- M84 醉酒虾 -->
+<div class="dish-card">
+  <h4>醉酒虾 (Gung Pad Khiemao) — M84</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://worldofthaifood.com/wp-content/uploads/2024/05/drunken-seafood-pad-kee-mao-featured.jpg" alt="Drunken Shrimp" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>"醉酒"系列的虾版演绎。大虾在滚热油锅中快速翻煎至变色，下入大量蒜末和新鲜辣椒猛火爆炒，加入竹笋和四季豆，撒入青柠叶。从下锅到出菜不过几分钟，保留了虾肉最鲜嫩弹牙的状态。据说是曼谷夜市最受深夜食客喜爱的醒酒良方之一。</p>
+</div>
+
+<!-- M85 蔬菜炒虾 -->
+<div class="dish-card">
+  <h4>蔬菜炒虾 (Pad Pak Ruamid Gung) — M85</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.bangkokbeyond.com/wp-content/uploads/phad-phak-kung-thai-recipe.jpg" alt="Pad Pak Ruam Mit Kung" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰国最典型的家常菜之一——什锦蔬菜炒虾。调味极为克制：蒜末爆香后以蚝油、酱油和少许糖为底，追求凸显食材本身的鲜甜。没有辣椒的灼烧，没有咖喱的浓重，只有清爽的蔬菜脆感和弹牙的虾肉甜味。十分钟内即可上桌，是平衡其他重口味菜品的理想搭档。</p>
+</div>
+
+<!-- M86 打抛鱿鱼 -->
+<div class="dish-card">
+  <h4>打抛鱿鱼 (Grapao Pla Mück) — M86</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 22.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.eatingthaifood.com/wp-content/uploads/2012/04/thai-stir-fried-squid-with-basil.jpg" alt="Pad Krapao Squid" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>打抛系列的鱿鱼版本。鱿鱼在高温猛火下快速翻炒至刚刚断生（过火会变老变韧），与蒜末、鸟眼辣椒爆炒，配甜椒、洋葱和四季豆。非常辣，大量鸟眼辣椒赋予直接而猛烈的辣度，但鱼露和少许糖让辣变得有深度有韵味。最经典吃法是配白米饭和煎蛋。</p>
+</div>
+
+<!-- ==================== 第八章 ==================== -->
+<h2 id="ch8">第八章：主菜 — 素食 (Vegetarian)</h2>
+
+<!-- V90 酱油炒混合蔬菜 -->
+<div class="dish-card">
+  <h4>酱油炒混合蔬菜 (Pad Pag Ruamid) — V90</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2021/12/mixed-veg-stir-fry-sq.jpg" alt="Pad Pak Ruam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>被泰国家庭亲切地称为"清冰箱"料理，灵活搭配手边任何时令蔬菜。蒜在热油中爆至金黄，按需要烹饪时间的长短依次加入蔬菜，用蚝油、酱油和少许糖调味，全程保持大火。清淡爽口，适合所有口味，是与浓郁咖喱类菜品搭配平衡餐桌的理想选择。</p>
+</div>
+
+<!-- V91 帕能咖喱蔬菜 -->
+<div class="dish-card">
+  <h4>帕能咖喱蔬菜 (Panäng Pag) — V91</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://minimalistbaker.com/wp-content/uploads/2019/01/Easy-Panang-Curry-SQUARE.jpg" alt="Panang Curry Vegetables" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>帕能咖喱的素食版本。帕能比红咖喱更浓稠温润，带有明显的花生和烘烤香料风味。咖喱酱包含干辣椒、南姜、香茅、青柠叶、芫荽根和花生碎等十余种原料。帕能的辣是被椰奶和花生层层包裹的温润辣度，不像绿咖喱那样尖锐直接。</p>
+</div>
+
+<!-- V92 绿咖喱豆腐 -->
+<div class="dish-card">
+  <h4>绿咖喱豆腐 (Gäng Khiaw Wann Tofu) — V92</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.mycookingjourney.com/wp-content/uploads/2015/07/Kaeng-Khiao-Wan-Thai-Green-Curry-with-Vegetables-and-Tofu.jpg" alt="Green Curry Tofu" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>绿咖喱虾的素食镜像版。老豆腐切块油炸至外层金黄酥脆——这一步骤至关重要，炸过的豆腐外酥内软，不会在咖喱中碎散，还能更好地吸收酱汁。豆腐的温和特质让它成为绿咖喱浓烈风味的完美载体——像海绵般吸收所有的香气和味道。</p>
+</div>
+
+<!-- V93 炒空心菜 -->
+<div class="dish-card">
+  <h4>炒空心菜 (Pag Bung Fai Däng) — V93</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️ 辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pak_boong_fai_daeng.jpg/800px-Pak_boong_fai_daeng.jpg" alt="Pak Boong Fai Daeng" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰国最具标志性的蔬菜菜式之一。"Fai Daeng"意为"红色的火焰"——在专业的泰国炒锅灶上烹饪时，猛烈的火舌会在翻炒瞬间冲入锅中，形成壮观的火焰秀。空心菜有着空心的茎秆和嫩绿的叶片，精髓在于极致的高温和极致的速度——一到三分钟内完成。蒜拍碎后与红辣椒一起爆炒，加入空心菜段、胡萝卜丝和发酵黄豆酱。口味是泰国菜标志性的咸、辣、鲜三味平衡。</p>
+</div>
+
+<!-- V94 腰果豆腐 -->
+<div class="dish-card">
+  <h4>腰果豆腐 (Taw Huu Pad Medmamuang) — V94</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 🌶️ 微辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.vforveganista.com/wp-content/uploads/2021/09/Thai-Cashew-Tofu-Pad-Med-Mamuang-500x375.jpeg" alt="Tofu Pad Med Mamuang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰式腰果炒菜的豆腐版本。"Med Mamuang"在泰语中意为"芒果形状的坚果"。渊源可追溯到中国的宫保鸡丁，经本地化融合后独具泰国特色。豆腐先煎至六面金黄酥脆，腰果干炒至微黄出香，以甜酱油、酱油和蚝油的复合酱汁收汁。辣椒酱的加入赋予独特泰式底味。微辣，对大多数食客都很友好。</p>
+</div>
+
+<!-- ==================== 第九章 ==================== -->
+<h2 id="ch9">第九章：主菜 — 炒饭 (Fried Rice) 与面条 (Noodles)</h2>
+
+<h3>炒饭</h3>
+
+<!-- RG100 泰式鸡肉炒饭 -->
+<div class="dish-card">
+  <h4>泰式鸡肉炒饭 (Khao Pad Gai) — RG100</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://rachelcooksthai.com/wp-content/uploads/2024/07/Khao-Pad-Gai-04.jpg" alt="Khao Pad Gai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>泰国最日常、最亲民的国民美食。脱胎于华人移民带入的中式炒饭技法，但发展出了鲜明的本土特色：必须使用泰国茉莉香米（最好隔夜冷藏过），调味以鱼露和泰式酱油为主，最后撒白胡椒粉和挤青柠汁——这两样是区分泰式和中式炒饭的关键标志。配以番茄片、黄瓜片和辣椒鱼露蘸酱（Prik Nam Pla）上桌。咸鲜适中，清新不腻。<a href="https://rachelcooksthai.com/khao-pad-gai/" target="_blank">来源</a></p>
+</div>
+
+<!-- RG101 泰式虾仁炒饭 -->
+<div class="dish-card">
+  <h4>泰式虾仁炒饭 (Khao Pad Gung) — RG101</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 19.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://www.eatingthaifood.com/wp-content/uploads/2015/01/thai-shrimp-fried-rice-recipe-16x9.jpg" alt="Khao Pad Goong" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>鸡肉炒饭的虾仁版本。泰国传统做法中虾通常保留虾头去壳烹饪——虾头中的虾膏在高温翻炒时融化释出，将米饭染上橙红色泽并赋予浓郁的甲壳类鲜味。虾在猛火中快速翻炒至变色卷曲即出锅，保持最佳弹牙口感。虾的鲜甜与茉莉香米的芬芳交融，是海鲜爱好者的最佳选择。</p>
+</div>
+
+<!-- RG102-104 醉酒炒饭 -->
+<div class="dish-card">
+  <h4>醉酒炒饭 (Khao Pad Khiemao) — RG102-104</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 鸡肉/素食 16.90€ / 牛肉 18.90€ / 虾或海鲜 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2021/07/pad-kee-mao-sq-2.jpg" alt="Khao Pad Khi Mao" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>将"醉酒"风味体系应用到炒饭上。如果说Khao Pad Gai是温文尔雅的日常主食，这就是它的叛逆兄弟——大量蒜末、鸟眼辣椒、茄子、竹笋、四季豆和泰式罗勒将白米饭彻底改造成味觉冒险。"非常辣"标注绝非虚言。罗勒在余热中释放的甘草茴香气息与辣椒的灼热形成令人迷醉的对比——也许这才是"醉酒"之名的真正含义。提供四种蛋白质选项。</p>
+</div>
+
+<h3>面条</h3>
+
+<!-- N200 酱油炒河粉 -->
+<div class="dish-card">
+  <h4>酱油炒河粉 (Pad Szi-iew Gai) — N200</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2022/01/pad-see-ew-new-sq-1.jpg" alt="Pad See Ew" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Pad See Ew，"See Ew"就是泰语中酱油的发音，源自中国潮州方言"豉油"。是泰国街头最受欢迎的面食之一。宽扁新鲜河粉是灵魂——太细太干的面条无法呈现柔韧弹滑又略带焦香的理想口感。关键技巧是"分开炒"再合并，让河粉与深色甜酱油产生微微的焦糖化——赋予标志性的烟熏甜香（"镬气"）和深褐色泽。配鸡肉和西兰花，"清淡"但绝不寡淡。<a href="https://hot-thai-kitchen.com/pad-see-ew-new/" target="_blank">来源</a></p>
+</div>
+
+<!-- N201/N202 泰式炒河粉 ⭐ -->
+<div class="dish-card recommended">
+  <h4>泰式炒河粉 (Pad Thai) — N201/N202</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 鸡肉 16.90€ / 虾 19.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Pad_Thai.JPG/800px-Pad_Thai.JPG" alt="Pad Thai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>Pad Thai（ผัดไทย）堪称泰国菜的世界名片。历史颇具政治色彩——1930年代末銮披汶总理在民族主义运动中将这道融合中式炒面技法与泰式调味的菜品制度化推广，从此成为泰国"国菜"。使用泡软的干米粉，以罗望子汁、鱼露和棕榈糖调制的"甜酸咸"三味酱汁翻炒，加入豆腐碎、鸡蛋和绿豆芽，出锅后撒碎花生和韭菜。</p>
+  <p>一位Google食客直接宣称这是"全斯图加特最好的Pad Thai"，2026年最新评论也将Pad Thai列为必点菜品。配一瓣青柠角挤汁，酸味的提升会让整道菜风味再上一个层次。<a href="https://en.wikipedia.org/wiki/Pad_Thai" target="_blank">来源: Wikipedia</a></p>
+</div>
+
+<!-- N203-N205 醉酒炒河粉 -->
+<div class="dish-card">
+  <h4>醉酒炒河粉 (Guay Tiao Pad Khiemao) — N203-N205</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 鸡肉/素食 16.90€ / 牛肉 18.90€ / 虾或海鲜 19.90€<br>
+    <strong>辣度</strong>: 🌶️🌶️🌶️ 非常辣
+  </div>
+  <div class="img-wrap">
+    <img src="https://thewoksoflife.com/wp-content/uploads/2022/06/drunken-noodles-16.jpg" alt="Drunken Noodles" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>大名鼎鼎的 Pad Kee Mao"醉酒炒河粉"，与Pad Thai并驾齐驱的泰国国民炒面，但两者风味截然不同：Pad Thai追求甜酸的优雅平衡，Pad Kee Mao追求辣蒜的热烈奔放。宽扁河粉在猛火上与大量蒜末、辣椒翻炒，加入茄子、四季豆、竹笋、西葫芦和泰式罗勒。最迷人的特质是对立元素的和谐共存——辣椒的灼热与罗勒的清凉、蒜的浓烈与青柠叶的清新。据说在曼谷深夜大排档最流行——是夜归人解馋醒酒的最佳拍档。<a href="https://en.wikipedia.org/wiki/Drunken_noodles" target="_blank">来源: Wikipedia</a></p>
+</div>
+
+<!-- N206 河粉汤 -->
+<div class="dish-card">
+  <h4>河粉汤 (Guay Tiao Naam) — N206</h4>
+  <div class="dish-meta">
+    <strong>价格</strong>: 16.90€<br>
+    <strong>辣度</strong>: 清淡
+  </div>
+  <div class="img-wrap">
+    <img src="https://teresasrecipes.com/wp-content/uploads/guay-tiew-lead.jpg" alt="Guay Tiew Nam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="img-fallback">图片加载失败</div>
+  </div>
+  <p>菜单中唯一一道汤面——温柔的、治愈系的泰式河粉汤。"Guay Tiao"源自中国潮州方言"粿条"，"Naam"是汤。提供鸡肉和鸭肉两种选择：鸡肉版清爽鲜甜，鸭肉版以肉桂、八角、芫荽根等温热香料慢炖，汤底带有更深沉的酱香和暖意。配以西兰花、胡萝卜和绿豆芽。标注为"清淡"口味，是在一桌辣味菜肴中让味蕾休憩的绝佳选择。</p>
+</div>
+
+<!-- ==================== 第十章 ==================== -->
+<h2 id="ch10">第十章：辣度指南与点餐建议</h2>
+
+<div class="section-card">
+  <h3>辣度分级速查表</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>辣度等级</th><th>对应菜品（部分代表）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>清淡（不辣）</strong></td><td>粉丝汤V03、云吞汤V04、所有小食V05-V11、炒蔬菜鸡H39、蔬菜炒鸭E54、蔬菜炒虾M85、酱油炒蔬菜V90、泰式炒饭RG100-101、酱油炒河粉N200、Pad Thai N201-202、河粉汤N206</td></tr>
+        <tr><td><strong>微辣</strong></td><td>玛莎曼咖喱H34、姜炒系列H37/E56/R66、腰果系列H38/E52/R67/V94、辣椒酱炒虾M82、姜味煎三文鱼F71</td></tr>
+        <tr><td><strong>中辣</strong></td><td>帕能咖喱H30/R60/V91、红咖喱H31/R62、绿咖喱H33/E51/R61/V92/M80、红咖喱配菠萝H32/M81、青咖喱配鲜胡椒E55/R63/M83、红咖喱三文鱼F70、醉酒三文鱼F72、醉酒虾M84、炒空心菜V93</td></tr>
+        <tr><td><strong>非常辣</strong></td><td>丛林咖喱H35/R65、打抛系列H36/R68/M86、醉酒系列E53/R64、醉酒炒饭RG102-104、醉酒炒河粉N203-205</td></tr>
+        <tr><td><strong>辣到非常辣</strong></td><td>青木瓜沙拉S20、粉丝沙拉S21</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>场景化点餐建议</h3>
+  <p><strong>初次来访 / 不太能吃辣：</strong> Pad Thai（N201/N202）是最安全的经典之选，一位食客称其为"全斯图加特最好的"。搭配云吞汤（V04）作为开胃，再来一份玛莎曼咖喱（H34）——CNN评为全球最美味食物第一名，辣度温和，适合入门。</p>
+  <p><strong>嗜辣探险者：</strong> 先以冬阴功汤（V01）开胃，再来一份打抛鸡（H36）或丛林咖喱（H35/R65）感受泰国街头的猛烈辣度。青木瓜沙拉（S20）可以要求"非常辣"级别。</p>
+  <p><strong>海鲜爱好者：</strong> 绿咖喱虾（M80）配红咖喱虾菠萝（M81）是绝佳的双咖喱组合。整条炸罗非鱼配辣椒酱（F73）则是视觉与味觉兼具的大菜。</p>
+  <p><strong>素食方案：</strong> 绿咖喱豆腐（V92）+ 炒空心菜（V93）+ 腰果豆腐（V94），可搭配炸蔬菜（V08）和炸豆腐（V09）作为前菜。需确认蘸酱中是否含鱼露。</p>
+  <p><strong>性价比之选：</strong> 午餐时段（Mittagstisch）主菜12.50-15.90€含米饭，是最划算的选择，但务必提前预订。汤品5.50-6.80€也是实惠的暖胃选择。</p>
+  <p><strong>宴客拼盘建议：</strong> 前菜可搭配沙嗲鸡（V06）+ 春卷（V07）+ 鸡肉面包（V11）；主菜选择烤鸭红咖喱（E50）+ 帕能咖喱牛肉（R60）+ 整条炸罗非鱼（F73/F74），涵盖不同食材和风味，视觉效果丰富。</p>
+</div>
+
+<!-- ==================== 第十一章 ==================== -->
+<h2 id="ch11">第十一章：实用信息</h2>
+
+<div class="section-card">
+  <h3>营业时间与预订</h3>
+  <ul>
+    <li><strong>主店（Rotebühlstraße 159）</strong>: 周日休息。午餐时段人气极高，建议提前电话预订（0711-34225235）。</li>
+    <li><strong>二店（Rötestraße 23）</strong>: 周日也营业（Wolt外卖 12:00-21:30），电话 0711-99312299。</li>
+    <li><strong>外卖</strong>: 二店通过 Wolt 提供外卖服务。主店外带需到店取餐或电话预订（最低消费50€）。</li>
+  </ul>
+</div>
+
+<div class="section-card">
+  <h3>价格概览</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>类别</th><th>价格区间</th></tr></thead>
+      <tbody>
+        <tr><td>汤品</td><td>5.50 - 6.80€</td></tr>
+        <tr><td>小食</td><td>5.50 - 8.50€</td></tr>
+        <tr><td>沙拉</td><td>10.20 - 12.20€</td></tr>
+        <tr><td>鸡肉主菜</td><td>17.90€</td></tr>
+        <tr><td>鸭肉主菜</td><td>19.90€</td></tr>
+        <tr><td>牛肉主菜</td><td>19.90€</td></tr>
+        <tr><td>鱼类主菜</td><td>24.90€</td></tr>
+        <tr><td>海鲜主菜</td><td>22.90€</td></tr>
+        <tr><td>素食主菜</td><td>16.90€</td></tr>
+        <tr><td>炒饭</td><td>16.90 - 19.90€</td></tr>
+        <tr><td>面条</td><td>16.90 - 19.90€</td></tr>
+        <tr><td>米饭（附赠）</td><td>主菜含一份香米饭</td></tr>
+        <tr><td>额外配菜</td><td>米饭2.50€ / 糯米饭3.00€ / 咖喱3.90€</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>小贴士</h3>
+  <ul>
+    <li>所有主菜（除面条外）都附赠一份茉莉香米饭。</li>
+    <li>餐厅空间较小，厨房油烟可能沾衣——穿着讲究的衣服前去需有心理准备。</li>
+    <li>咖喱可选五个辣度等级，根据个人承受力调节。</li>
+    <li>餐厅在斯图加特与 Kwan Kao、Lek's Thai 并列为正宗泰国菜三强，走朴实接地气的路线，价格略为亲民。</li>
+  </ul>
+</div>
+
+<!-- ==================== 数据来源 ==================== -->
+<h2 id="sources">数据来源</h2>
+
+<div class="section-card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>类别</th><th>来源</th></tr></thead>
+      <tbody>
+        <tr><td>菜单数据</td><td><a href="https://kruathaibolan.de/speisekarte.html" target="_blank">Krua Thai Bolan 官网</a></td></tr>
+        <tr><td>Google评论</td><td><a href="https://krua-thai-bolan.foodpearl.com/" target="_blank">FoodPearl</a></td></tr>
+        <tr><td>TripAdvisor</td><td><a href="https://www.tripadvisor.de/Restaurant_Review-g187291-d11444468-Reviews-Eidim_Bolan-Stuttgart_Baden_Wurttemberg.html" target="_blank">Eidim Bolan - TripAdvisor</a></td></tr>
+        <tr><td>外卖平台</td><td><a href="https://wolt.com/de/deu/stuttgart/restaurant/krua-thai-bolan-2" target="_blank">Wolt - Krua Thai Bolan 2</a></td></tr>
+        <tr><td>菜品描述</td><td>Hot Thai Kitchen, Serious Eats, Wikipedia, Rachel Cooks Thai, Import Food 等泰国美食专业资源</td></tr>
+        <tr><td>菜品图片</td><td>Wikimedia Commons, The Spruce Eats, Serious Eats, Pexels, Hot Thai Kitchen, Rachel Cooks Thai 等</td></tr>
+        <tr><td>旅游推荐</td><td><a href="https://www.stuttgart-tourist.de/a-eidim-bolan" target="_blank">斯图加特旅游局</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  <p>调研报告 · 2026年2月14日 · Krua Thai Bolan 斯图加特泰式餐厅</p>
+</div>
+
+</div>
+</body>
+</html>
